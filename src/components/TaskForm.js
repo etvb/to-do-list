@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/taskForm.css'
 
 function TaskForm({addTask}) {
   
@@ -18,14 +19,16 @@ function TaskForm({addTask}) {
   }
   return(
     <>
-      <h2>Nueva Tarea</h2>
+      <h2 className="Form-title">Nueva Tarea</h2>
       <form onSubmit={handSubmit}>
         <input type="text"
+          className="Form-text"
          value={newTask} 
          onChange={handleChange}
          />
         <input type="submit"
-
+          className="Form-submit"
+          value="+"
         />
       </form>
     </>
