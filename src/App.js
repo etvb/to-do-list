@@ -20,7 +20,9 @@ function App() {
       <h1>TAREAS</h1>
       <div className="container">
         <TaskForm  addTask={addTask}/>
-        <TaskList tasks={tasks}/>
+        <TaskList tasks={tasks}
+                  setTasks={setTasks}
+        />
         
       </div>  
       
