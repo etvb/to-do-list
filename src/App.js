@@ -7,7 +7,7 @@ import TaskList from './components/TaskList';
 
 function App() {
 
-  const [tasks, setTasks] = useState(['jakshd', 'kjshd', 'adkjfk']);
+  const [tasks, setTasks] = useState([]);
 
   function addTask(task) {
     setTasks([...tasks, task]);

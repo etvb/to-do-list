@@ -4,11 +4,12 @@ import '../css/taskList.css';
 const TaskList = ({tasks, setTasks}) => {
 
 function deleteTask(index) {
-  console.log(tasks)
-  let newTasks = tasks.filter((elemento, indexI) => indexI  !== index);
+  let newTasks = tasks.filter((elemento, indexI) => {
+    return indexI  !== index
+  });
+
   setTasks(newTasks)
 
-  console.log(newTasks);
 }
 
 return(
