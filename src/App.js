@@ -3,6 +3,8 @@ import './App.css';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 
+// https://mauriciogc.medium.com/react-creando-una-app-to-do-list-con-create-react-app-y-el-hook-usestate-6ae378569705
+
 function App() {
 
   const [tasks, setTasks] = useState(['jakshd', 'kjshd', 'adkjfk']);
