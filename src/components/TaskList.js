@@ -1,16 +1,8 @@
 import React from 'react';
 import '../css/taskList.css';
 
-const TaskList = ({tasks, setTasks}) => {
+const TaskList = ({tasks, deleteTask}) => {
 
-function deleteTask(index) {
-  let newTasks = tasks.filter((elemento, indexI) => {
-    return indexI  !== index
-  });
-
-  setTasks(newTasks)
-
-}
 
 return(
     <>

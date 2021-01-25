@@ -13,7 +13,12 @@ function App() {
     setTasks([...tasks, task]);
   }
 
-
+  function deleteTask(index) {
+    let newTasks = tasks.filter((elemento, indexI) => {
+      return indexI  !== index
+    });
+    setTasks(newTasks)  
+  }
 
   return (
     <div className="App">
@@ -21,11 +26,9 @@ function App() {
       <div className="container">
         <TaskForm  addTask={addTask}/>
         <TaskList tasks={tasks}
-                  setTasks={setTasks}
+                  deleteTask={deleteTask}
         />
-        
       </div>  
-      
     </div>
   );
 }
