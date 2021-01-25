@@ -26,6 +26,8 @@ function App() {
       <div className="container">
         <TaskForm  addTask={addTask}/>
 
+        {tasks.length > 0 ? <h2>Tareas</h2> : <h2> Sin Tareas</h2>}
+
         {tasks.map((task, index) => {
           return(
             <TaskList task={task}
