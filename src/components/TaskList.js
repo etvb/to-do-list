@@ -6,14 +6,14 @@ const TaskList = ({task, deleteTask, index}) => {
 
 return(
     <>
-      { task ?
+      {/* { task ?
        
        <h2>Tareas</h2>
       
       :  
       
       <h2>Sin Tareas</h2>
-    }
+    } */}
 
     <div className="Task-container">
       <li className="Task-li" >{task} </li>
