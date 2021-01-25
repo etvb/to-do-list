@@ -25,9 +25,17 @@ function App() {
       <h1>TAREAS</h1>
       <div className="container">
         <TaskForm  addTask={addTask}/>
-        <TaskList tasks={tasks}
-                  deleteTask={deleteTask}
-        />
+
+        {tasks.map((task, index) => {
+          return(
+            <TaskList task={task}
+                      key={index}
+                      deleteTask={deleteTask}
+                      index={index}
+            />
+          )
+
+        })}
       </div>  
     </div>
   );
