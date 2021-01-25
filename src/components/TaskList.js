@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../css/taskList.css';
 
 const TaskList = ({tasks, deleteTask}) => {
-
 
 return(
     <>
@@ -36,6 +36,12 @@ return(
       })}
     </>
   );
+}
+
+TaskList.propTypes = {
+  tasks: PropTypes.array.isRequired,
+  deleteTask: PropTypes.func.isRequired
+
 }
 
 export default TaskList;
