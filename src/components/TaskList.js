@@ -9,67 +9,32 @@ const TaskList = ({task, deleteTask, index, upload}) => {
   function handleChange(e) {
     if(uploadTask !== ''){
       setUploadTask( e.target.value);
-    }
-    
+    }  
   }
 
-  function handSubmit(e){
+  function submitTaskList(){
     if(uploadTask !== ''){
       upload(uploadTask, index);
     }
-    e.preventDefault();
-
-    
   }
-
-  // let dataList = handleChange();
-
-
 
 return(
     <>
     <div className="Task-container">
       <li className="Task-li" >{task} </li>
-
-      <form onSubmit={handSubmit}>
         <input type="text" value={uploadTask} onChange={handleChange}/>
-
         <div className="Container-buttons">
-          {/* <button>
+          <button>
             <i className="fas fa-check"></i>
-          </button> */}
-          <input type="submit" value="Actualizar" />
-          
-
+          </button>
+          <button onClick={() => submitTaskList()}>
+            <i className="fas fa-pencil-alt"></i>
+          </button>
+          <button onClick={() => deleteTask(index)}>
+            <i className="far fa-trash-alt"></i> 
+          </button>
         </div>
-      </form>
-      <button>
-      <i className="fas fa-pencil-alt"></i>
-      </button>
-      <button onClick={() => deleteTask(index)}>
-        <i className="far fa-trash-alt"></i> 
-      </button>
     </div>
-      
-
-      {/* {tasks.map((task, index) => {
-        return (
-          <div className="Task-container" key={index}>
-            <li className="Task-li" >{task} </li>
-            <div className="Container-buttons">
-              <button>
-                <i className="fas fa-check"></i>
-              </button>
-              <button>
-                <i className="fas fa-pencil-alt"></i>
-              </button>
-              <button onClick={() => deleteTask(index)}>
-                <i className="far fa-trash-alt"></i> 
-              </button>
-            </div>
-          </div>
-        )
-      })} */}
     </>
   );
 }

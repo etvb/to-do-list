@@ -27,7 +27,7 @@ function App() {
   function upload(uploadTask, indexUpdate){
     // console.log(uploadTask, index);
     let newTasks = tasks.map( (task, index) => {
-      if(index == indexUpdate){
+      if(index === indexUpdate){
         return uploadTask;
       }
       return task
