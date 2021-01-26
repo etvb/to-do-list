@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
@@ -8,6 +8,10 @@ import TaskList from './components/TaskList';
 function App() {
 
   const [tasks, setTasks] = useState([]);
+
+  useEffect( () => {
+
+  },[tasks]);
 
   function addTask(task) {
     setTasks([...tasks, task]);
@@ -20,9 +24,16 @@ function App() {
     setTasks(newTasks)  
   }
 
-  function upload(uploadTask, index){
-    console.log(uploadTask, index);
-    tasks[index] = uploadTask;
+  function upload(uploadTask, indexUpdate){
+    // console.log(uploadTask, index);
+    let newTasks = tasks.map( (task, index) => {
+      if(index == indexUpdate){
+        return uploadTask;
+      }
+      return task
+    })
+    console.log(newTasks)
+    setTasks(newTasks)
   }
 
   return (

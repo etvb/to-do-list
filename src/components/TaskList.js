@@ -7,12 +7,17 @@ const TaskList = ({task, deleteTask, index, upload}) => {
   const [uploadTask, setUploadTask] = useState(task)
   
   function handleChange(e) {
-    setUploadTask( e.target.value);
+    if(uploadTask !== ''){
+      setUploadTask( e.target.value);
+    }
+    
   }
 
   function handSubmit(e){
+    if(uploadTask !== ''){
+      upload(uploadTask, index);
+    }
     e.preventDefault();
-    upload(uploadTask, index);
 
     
   }
