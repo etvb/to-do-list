@@ -7,11 +7,27 @@ import TaskList from './components/TaskList';
 
 function App() {
 
-  const [tasks, setTasks] = useState([]);
+  //Revisamos si localStorage tiene algo, Recuerda que en localStorage
+  //solo puede almacenar texto, asi que el texto lo pasamos a JSON
+  let beginLocalStorage = JSON.parse(localStorage.getItem('tasksLocalStorage'));
+
+  if(!beginLocalStorage){
+    //entra aqui cuando no existe y le asigne un array vacio
+    // console.log('no existe el localStorage')
+    beginLocalStorage = [];
+  }
+
+  const [tasks, setTasks] = useState(beginLocalStorage);
 
   useEffect( () => {
-
-  },[tasks]);
+    //Como al principio tasks es un arreglo vacio, ahora si
+    //guardamos en localStorage lo qeu tenga mi estae tasks
+    //y el arreglo lo pasamos a texto
+    if(beginLocalStorage){
+      localStorage.setItem('tasksLocalStorage', JSON.stringify(tasks));
+    }
+    // console.log('ya cambio TASKS o beginLocalStorage')
+  },[tasks, beginLocalStorage]);
 
   function addTask(task) {
     setTasks([...tasks, task]);
