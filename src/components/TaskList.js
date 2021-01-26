@@ -22,7 +22,7 @@ return(
     <>
     <div className="Task-container">
       <li className="Task-li" >{task} </li>
-        <input type="text" value={uploadTask} onChange={handleChange}/>
+        {/* <input type="text" value={uploadTask} onChange={handleChange}/> */}
         <div className="Container-buttons">
           <button>
             <i className="fas fa-check"></i>
