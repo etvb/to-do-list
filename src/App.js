@@ -20,6 +20,11 @@ function App() {
     setTasks(newTasks)  
   }
 
+  function upload(uploadTask, index){
+    console.log(uploadTask, index);
+    tasks[index] = uploadTask;
+  }
+
   return (
     <div className="App">
       <h1>TAREAS</h1>
@@ -34,6 +39,7 @@ function App() {
                       key={index}
                       deleteTask={deleteTask}
                       index={index}
+                      upload={upload}
             />
           )
 

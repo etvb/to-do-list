@@ -21,7 +21,7 @@ function TaskForm({addTask}) {
   return(
     <>
       <h2 className="Form-title">Nueva Tarea</h2>
-      <form onSubmit={handSubmit}>
+      <form className="Taskform" onSubmit={handSubmit}>
         <input type="text"
           className="Form-text"
          value={newTask} 
