@@ -15,7 +15,7 @@
 }
 
 .Form-text {
-  height: 30px;
+  height: 27px;
   width: 80%;
   border: none;
   position: absolute;
@@ -31,12 +31,30 @@
   background: pink;
   border-radius: 50%;
   border: 1px solid pink;
-  font-size: 20px;
+  font-size: 13px;
   color: white;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
   /* padding: 20px; */
   position: absolute;
   top: 2px;
-  right: 5px;
+  right: 7px;
   cursor: pointer;
+}
+
+
+.Task-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 5px 10px;
+}
+
+.Task-li {
+  list-style: none;
+  text-align: left;
+  width: 72%;
+  overflow-wrap: break-word;
+}
+.btn {
+  margin: 0 2px;
+  padding: 3px 6px; 
 }

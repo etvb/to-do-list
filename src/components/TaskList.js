@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../css/taskList.css';
 
 const TaskList = ({task, deleteTask, index, upload}) => {
 
@@ -20,21 +19,43 @@ const TaskList = ({task, deleteTask, index, upload}) => {
 
 return(
     <>
-    <div className="Task-container">
+    <div className="border-bottom Task-container">
       <li className="Task-li" >{task} </li>
-        {/* <input type="text" value={uploadTask} onChange={handleChange}/> */}
-        <div className="Container-buttons">
-          <button>
+        
+        <div className="Container-buttons mb-1">
+          <button className="btn btn-primary">
             <i className="fas fa-check"></i>
           </button>
-          <button onClick={() => submitTaskList()}>
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#exampleModal${index}`}>
             <i className="fas fa-pencil-alt"></i>
           </button>
-          <button onClick={() => deleteTask(index)}>
+          <button onClick={() => deleteTask(index)} className="btn btn-primary">
             <i className="far fa-trash-alt"></i> 
           </button>
         </div>
+        
     </div>
+    {/* <!-- Modal --> */}
+    <div className="modal fade" id={`exampleModal${index}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div className="modal-body">
+            <input type="text" value={uploadTask} onChange={handleChange}/>
+          </div>
+          
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button onClick={() => submitTaskList()} type="button" className="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </>
   );
 }
