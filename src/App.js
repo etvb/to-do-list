@@ -25,23 +25,30 @@ function App() {
     //y el arreglo lo pasamos a texto
     if(beginLocalStorage){
       localStorage.setItem('tasksLocalStorage', JSON.stringify(tasks));
+    }else{
+
+      localStorage.setItem('tasksLocalStorage', JSON.stringify([]));
     }
+    
     // console.log('ya cambio TASKS o beginLocalStorage')
   },[tasks, beginLocalStorage]);
 
   function addTask(task) {
+    console.log(task);
     setTasks([...tasks, task]);
   }
 
   function deleteTask(index) {
+    console.log('borrando'+tasks[index]);
     let newTasks = tasks.filter((elemento, indexI) => {
       return indexI  !== index
     });
-    setTasks(newTasks)  
+    setTasks(newTasks) 
+    window.location.href = window.location.href; 
   }
 
   function upload(uploadTask, indexUpdate){
-    // console.log(uploadTask, index);
+    console.log('actualizndo'+uploadTask, indexUpdate);
     let newTasks = tasks.map( (task, index) => {
       if(index === indexUpdate){
         return uploadTask;
