@@ -55,10 +55,11 @@ return(
   );
 }
 
-// TaskList.propTypes = {
-//   tasks: PropTypes.array.isRequired,
-//   deleteTask: PropTypes.func.isRequired
-
-// }
+TaskList.propTypes = {
+  tasks: PropTypes.array,
+  deleteTask: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  upload: PropTypes.func.isRequired
+}
 
 export default TaskList;

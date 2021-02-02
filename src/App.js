@@ -34,7 +34,7 @@ function App() {
   },[tasks, beginLocalStorage]);
 
   function addTask(task) {
-    console.log(task);
+    // console.log(task);
     setTasks([...tasks, task]);
   }
 
@@ -44,7 +44,7 @@ function App() {
       return indexI  !== index
     });
     setTasks(newTasks) 
-    window.location.href = window.location.href; 
+    // window.location.href = window.location.href; 
   }
 
   function upload(uploadTask, indexUpdate){
